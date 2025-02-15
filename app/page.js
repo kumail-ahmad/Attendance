@@ -2,9 +2,9 @@ export default function Home() {
   return (
     <main>
       <section className="left section flex flex-row">
-        <div className=" bg-red-400 w-[50vh]">
+        <div className=" bg-red-100 w-[50vh]">
           <div className="content">
-            <div className="logo">abcLOGO</div>
+            <h1 className="logo mt-16 ml-8">ATM</h1>
             <ul className="ml-4 text-xl">
               <li>Dashboard</li>
               <li>Students</li>
