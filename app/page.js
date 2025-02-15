@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <main>
@@ -16,7 +14,21 @@ export default function Home() {
           </div>
         </div>
 
-        <div className=" bg-green-400 w-[163vh] ">right </div>
+        <div className=" bg-green-400 w-[163vh] ">
+          <div>UserProfile</div>
+          <div>
+            <h1>Dashboard </h1>
+            <div className="boxes">
+              <div className="box flex ">
+                <div className="img">IC</div>
+                <div>
+                  <div className="heading">Total Students</div>
+                  <div className="value">20%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
