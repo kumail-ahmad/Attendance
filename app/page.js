@@ -5,11 +5,11 @@ export default function Home() {
         <div className=" bg-red-100 w-[50vh]">
           <div className="content">
             <h1 className="logo mt-16 ml-8">ATM</h1>
-            <ul className="ml-4 text-xl">
-              <li>Dashboard</li>
-              <li>Students</li>
-              <li>Attendance</li>
-              <li>Setting</li>
+            <ul className="ml-4 text-xl ">
+              <li className="mt-2 ml-2  ">Dashboard</li>
+              <li className="mt-2 ml-2  ">Students</li>
+              <li className="mt-2 ml-2  ">Attendance</li>
+              <li className="mt-2 ml-2  ">Setting</li>
             </ul>
           </div>
         </div>
