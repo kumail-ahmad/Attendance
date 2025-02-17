@@ -1,15 +1,18 @@
 export default function Home() {
   return (
     <main>
-      <section className="left section flex flex-row">
-        <div className=" bg-red-100 w-[50vh]">
+      <section className="left section flex flex-row min-h-[100vh]">
+        <div className=" bg--100 w-[50vh]">
           <div className="content">
-            <h1 className="logo mt-16 ml-8">ATM</h1>
-            <ul className="ml-4 text-xl ">
-              <li className="mt-2 ml-2  ">Dashboard</li>
-              <li className="mt-2 ml-2  ">Students</li>
-              <li className="mt-2 ml-2  ">Attendance</li>
-              <li className="mt-2 ml-2  ">Setting</li>
+            <h1 className="logo mt-16 ml-5">
+              <img src="atmlogo.png" alt="logo" />
+            </h1>
+            <hr className="font-extrabold" />
+            <ul className="ml-4 text-lg font-semilight ">
+              <li className="mt-4 ml-2 p-2 rounded-lg mr-3 hover:bg-blue-300">Dashboard</li>
+              <li className="mt-4 ml-2 p-2 rounded-lg mr-3 hover:bg-blue-300">Students</li>
+              <li className="mt-4 ml-2 p-2 rounded-lg mr-3 hover:bg-blue-300">Attendance</li>
+              <li className="mt-4 ml-2 p-2 rounded-lg mr-3 hover:bg-blue-300">Setting</li>
             </ul>
           </div>
         </div>
