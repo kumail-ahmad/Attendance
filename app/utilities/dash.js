@@ -17,6 +17,6 @@ export const DashItems = [
     id: 3,
     title: "Total Absent",
     percentage: 10,
-    image: "/decresing.png",
+    image: "/decresing.svg",
   },
 ];
