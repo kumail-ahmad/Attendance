@@ -17,6 +17,6 @@ export const NavImg = [
     {
         id: 4,
         title: "Setting",
-        image: "/setting.svg",
+        image: "/settings.svg",
     }
 ]
