@@ -1,6 +1,7 @@
 import React from "react";
 import { NavImg } from "../utilities/NavImg";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -19,7 +20,7 @@ const Navbar = () => {
                 alt="noimg"
                 className="gap-3"
               />
-              {item.title}
+              <Link href={`/${item.redirect}`}>{item.title}</Link>
             </li>
           ))}
         </ul>
