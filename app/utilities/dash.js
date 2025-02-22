@@ -3,7 +3,7 @@ export const DashItems = [
     id: 1,
     title: "Total Students",
     percentage: 10,
-    image: "/increasing.svg",
+    image: "/home.svg",
     
   },
 
