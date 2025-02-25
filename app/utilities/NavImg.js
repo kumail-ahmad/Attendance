@@ -3,7 +3,7 @@ export const NavImg = [
     id: 1,
     title: "Dashboard",
     image: "/dashboard.svg",
-    redirect: "#",
+    redirect: "dashboard",
   },
   {
     id: 2,

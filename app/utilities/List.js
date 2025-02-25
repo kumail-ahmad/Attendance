@@ -8,7 +8,7 @@ export const List = [
     Action: "Action",
   },
   {
-    id: "01",
+    id: "02",
     Name: "Abid Fayaz",
     Grade: "awal",
     Contact: "910910910",
