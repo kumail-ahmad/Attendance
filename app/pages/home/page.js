@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import { DashItems } from "../utilities/dash";
+import { DashItems } from "../../utilities/dash";
 import React, { useEffect } from "react";
 
 const Dashboard = () => {
   return (
-    <div>
+   
     <div>
       <div>
         <div className="flex justify-end p-4">UserProfile</div>
@@ -35,7 +35,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
-  </div>
+ 
   );
 };
 
