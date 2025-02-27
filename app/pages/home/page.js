@@ -1,11 +1,15 @@
 "use client";
 import Image from "next/image";
+import useTheme from 'next-themes'
 import { DashItems } from "../../utilities/dash";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const Dashboard = () => {
+  const { setTheme } = useTheme();
+  useEffect(() => {
+    setTheme("dark");
+  }, []);
   return (
-   
     <div>
       <div>
         <div className="flex justify-end p-4">UserProfile</div>
@@ -15,7 +19,7 @@ const Dashboard = () => {
         <div className="flex flex-wrap gap-4 ml-9 mt-6">
           {DashItems.map((item) => (
             <div
-            key={item.id}
+              key={item.id}
               className="flex items-center bg-blue-200 p-4 w-[300px] h-[100px] rounded-lg shadow-md"
             >
               <Image
@@ -35,7 +39,6 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
- 
   );
 };
 
