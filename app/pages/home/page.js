@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
-import useTheme from 'next-themes'
+import { useTheme } from "next-themes";
 import { DashItems } from "../../utilities/dash";
 import React, { useEffect, useState } from "react";
 
 const Dashboard = () => {
-  const { setTheme } = useTheme();
-  useEffect(() => {
-    setTheme("dark");
-  }, []);
+  // const { setTheme } = useTheme();
+  // useEffect(() => {
+  //   setTheme("system");
+  // }, []);
   return (
     <div>
       <div>
