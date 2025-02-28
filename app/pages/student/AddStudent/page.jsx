@@ -33,25 +33,30 @@ function AddStudent() {
         <Dialog open={open}>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Adding a new student ...</DialogTitle>
+              <DialogTitle>Add New student ...</DialogTitle>
               <DialogDescription>
                 <div>
-                  <label htmlFor="name">Name</label>
-                  <Input placeholder="Ex. Amir" />
-                  <div>
+                  <div className="mt-3">
+                    <label htmlFor="name">Name</label>
+                    <Input placeholder="Ex. Amir" />
+                  </div>
+                  <div className="mt-3">
                     <label htmlFor="name">Address</label>
                     <Input placeholder="Ex. balhama" />
                   </div>
-                  <div>
+                  <div className="mt-3">
                     <label htmlFor="name">Contact Number</label>
                     <Input placeholder="Ex. 9100000000" />
                   </div>{" "}
                 </div>
-                <div className="flex justify-between gap-3 "> 
+                <div className="flex justify-between gap-3 mt-3 ">
                   <Button variant="outline" onClick={() => setopen(false)}>
                     Cancel{" "}
                   </Button>
-                  <Button variant="outline" onClick={()=>alert("saved")}>
+                  <Button
+                    className="bg-violet-500"
+                    onClick={() => alert("saved")}
+                  >
                     Save{" "}
                   </Button>
                 </div>
