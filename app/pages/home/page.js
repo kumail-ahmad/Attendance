@@ -3,16 +3,26 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { DashItems } from "../../utilities/dash";
 import React, { useEffect, useState } from "react";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
 const Dashboard = () => {
   // const { setTheme } = useTheme();
   // useEffect(() => {
   //   setTheme("system");
   // }, []);
+
+  const { user } = useKindeBrowserClient();
   return (
     <div>
       <div>
-        <div className="flex justify-end p-4">UserProfile</div>
+        <div className="flex justify-end p-4 rounded-full">
+          <Image
+            src={user?.picture ? user.picture : "/user.svg"}
+            width={35}
+            height={35}
+            alt="U"
+          />
+        </div>
         <hr />
         <h1 className="text-2xl font-bold ml-12 mt-4">Dashboard</h1>
 
@@ -29,6 +39,7 @@ const Dashboard = () => {
                 height={28}
                 className=""
               />
+              <h1>{user?.given_name}</h1>
 
               <div className="ml-5 flex flex-col">
                 <div className="text-lg font-semibold">{item.title}</div>
