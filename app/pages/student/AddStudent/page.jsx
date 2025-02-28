@@ -10,10 +10,15 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
+import { useForm } from "react-hook-form";
 function AddStudent() {
   const [count, setCount] = useState(0);
   const [open, setopen] = useState(false);
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    console.log("FormData:", data);
+  };
   const handleClick = () => {
     // alert("clicked");
     setCount((count) => count + 1);
@@ -36,29 +41,45 @@ function AddStudent() {
               <DialogTitle>Add New student ...</DialogTitle>
               <DialogDescription>
                 <div>
-                  <div className="mt-3">
-                    <label htmlFor="name">Name</label>
-                    <Input placeholder="Ex. Amir" />
+
+                
+                <form action="" onSubmit={handleSubmit(onSubmit)}>
+                  <div>
+                    <div className="mt-3">
+                      <label htmlFor="name">Name</label>
+                      <Input
+                        placeholder="Ex. Amir"
+                        {...register("name", { required: true })}
+                      />
+                    </div>
+                    <div className="mt-3">
+                      <label htmlFor="name">Address</label>
+                      <Input
+                        placeholder="Ex. balhama"
+                        {...register("address", { required: true })}
+                      />
+                    </div>
+                    <div className="mt-3">
+                      <label htmlFor="name">Contact Number</label>
+                      <Input
+                        placeholder="Ex. 9100000000"
+                        {...register("Contact", { required: true })}
+                      />
+                    </div>{" "}
                   </div>
-                  <div className="mt-3">
-                    <label htmlFor="name">Address</label>
-                    <Input placeholder="Ex. balhama" />
+                  <div className="flex justify-between gap-3 mt-3 ">
+                    <Button variant="outline" onClick={() => setopen(false)}>
+                      Cancel{" "}
+                    </Button>
+                    <Button
+                      className="bg-violet-500"
+                      //   onClick={() => alert("saved")}
+                      type="submit  "
+                    >
+                      Save{" "}
+                    </Button>
                   </div>
-                  <div className="mt-3">
-                    <label htmlFor="name">Contact Number</label>
-                    <Input placeholder="Ex. 9100000000" />
-                  </div>{" "}
-                </div>
-                <div className="flex justify-between gap-3 mt-3 ">
-                  <Button variant="outline" onClick={() => setopen(false)}>
-                    Cancel{" "}
-                  </Button>
-                  <Button
-                    className="bg-violet-500"
-                    onClick={() => alert("saved")}
-                  >
-                    Save{" "}
-                  </Button>
+                </form>
                 </div>
               </DialogDescription>
             </DialogHeader>
