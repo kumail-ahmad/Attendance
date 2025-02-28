@@ -19,10 +19,10 @@ function AddStudent() {
   const onSubmit = (data) => {
     console.log("FormData:", data);
   };
-  const handleClick = () => {
-    // alert("clicked");
-    setCount((count) => count + 1);
-  };
+//   const handleClick = () => {
+//     alert("clicked");
+//     setCount((count) => count + 1);
+//   };
   return (
     <div>
       <div className="ml-12 mt-4 gap-4 flex justify-between m-4">
