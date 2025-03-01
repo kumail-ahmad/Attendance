@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
-
+import { Toaster } from "@/components/ui/sonner"
 import Navbar from "./components/Navbar";
 
 
@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Attendance Manager",
   description: "Made with NextJs",
+  icons: {
+    icon: "/favicon.svg", 
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -28,7 +31,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-
+        <Toaster />
        {children}
       </body>
     </html>

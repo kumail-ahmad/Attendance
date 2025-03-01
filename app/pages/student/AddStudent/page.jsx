@@ -6,82 +6,99 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { LoaderIcon } from "lucide-react";
+
 function AddStudent() {
   const [count, setCount] = useState(0);
-  const [open, setopen] = useState(false);
-  const { register, handleSubmit } = useForm();
+  const [open, setOpen] = useState(false);
+  const { register, handleSubmit, reset } = useForm();
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log("FormData:", data);
+    setLoading(true);
+
+    // Simulating API request delay
+    setTimeout(() => {
+      reset();
+      setOpen(false);
+      setCount((count) => count + 1); 
+      setLoading(false);
+      toast("Student has been added !!!");
+    }, 2000);
   };
-//   const handleClick = () => {
-//     alert("clicked");
-//     setCount((count) => count + 1);
-//   };
+
   return (
     <div>
       <div className="ml-12 mt-4 gap-4 flex justify-between m-4">
-        <div className=" mt-5 items-center justify-center rounded-3xl">
-          Total Student Count : {count}
+        <div className="mt-5 items-center justify-center rounded-3xl">
+          Total Student Count: {count}
         </div>
         <Button
-          onClick={() => setopen(true)}
+          onClick={() => setOpen(true)}
           className="border rounded-3xl w-40 bg-purple-400 p-5 text-white font-bold"
         >
           Add Student +
         </Button>
-        <Dialog open={open}>
+        <Dialog open={open} onOpenChange={setOpen}>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Add New student ...</DialogTitle>
-              <DialogDescription>
+              <DialogTitle>Add New Student</DialogTitle>
+              
                 <div>
-
-                
-                <form action="" onSubmit={handleSubmit(onSubmit)}>
-                  <div>
-                    <div className="mt-3">
-                      <label htmlFor="name">Name</label>
-                      <Input
-                        placeholder="Ex. Amir"
-                        {...register("name", { required: true })}
-                      />
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                    <div>
+                      <div className="mt-3">
+                        <label htmlFor="name">Name</label>
+                        <Input
+                          placeholder="Ex. Amir"
+                          {...register("name", { required: true })}
+                        />
+                      </div>
+                      <div className="mt-3">
+                        <label htmlFor="address">Address</label>
+                        <Input
+                          placeholder="Ex. Balhama"
+                          {...register("address", { required: true })}
+                        />
+                      </div>
+                      <div className="mt-3">
+                        <label htmlFor="contact">Contact Number</label>
+                        <Input
+                          type="number"
+                          placeholder="Ex. 9100000000"
+                          {...register("contact", { required: true })}
+                        />
+                      </div>
                     </div>
-                    <div className="mt-3">
-                      <label htmlFor="name">Address</label>
-                      <Input
-                        placeholder="Ex. balhama"
-                        {...register("address", { required: true })}
-                      />
+                    <div className="flex justify-between gap-3 mt-3">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => setOpen(false)}
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        className="bg-violet-500 flex items-center justify-center"
+                        type="submit"
+                        disabled={loading}
+                      >
+                        {loading ? (
+                          <LoaderIcon className="animate-spin" size={20} />
+                        ) : (
+                          "Save"
+                        )}
+                      </Button>
                     </div>
-                    <div className="mt-3">
-                      <label htmlFor="name">Contact Number</label>
-                      <Input
-                        placeholder="Ex. 9100000000"
-                        {...register("Contact", { required: true })}
-                      />
-                    </div>{" "}
-                  </div>
-                  <div className="flex justify-between gap-3 mt-3 ">
-                    <Button variant="outline" onClick={() => setopen(false)}>
-                      Cancel{" "}
-                    </Button>
-                    <Button
-                      className="bg-violet-500"
-                      //   onClick={() => alert("saved")}
-                      type="submit  "
-                    >
-                      Save{" "}
-                    </Button>
-                  </div>
-                </form>
+                  </form>
                 </div>
-              </DialogDescription>
+           
             </DialogHeader>
           </DialogContent>
         </Dialog>
