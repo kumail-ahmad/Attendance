@@ -9,7 +9,7 @@ export const NavImg = [
     id: 2,
     title: "Students",
     image: "/students.svg",
-    redirect: "pages/student",
+    redirect: "pages/studentListTable",
   },
   {
     id: 3,
