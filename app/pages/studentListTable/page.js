@@ -16,6 +16,10 @@ import {
 } from "@/components/ui/table";
 import { Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const pagination = true;
+const paginationPageSize = 10;
+const paginationPageSizeSelector = [10, 20, 30, 40, 50];
 const Page = () => {
   const CustomButton = (props) => {
     return (
@@ -86,7 +90,13 @@ const Page = () => {
           </TableBody>
         </Table> */}
         <div className="ml-20 mt-9" style={{ height: 300, width: 1200 }}>
-          <AgGridReact rowData={rowData} columnDefs={colDefs} />
+          <AgGridReact
+            rowData={rowData}
+            columnDefs={colDefs}
+            pagination={pagination}
+            paginationPageSize={paginationPageSize}
+            paginationPageSizeSelector={paginationPageSizeSelector}
+          />
         </div>
       </div>
     </div>
