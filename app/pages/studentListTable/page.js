@@ -14,7 +14,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Trash } from "lucide-react";
+import { Search, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const pagination = true;
@@ -53,18 +53,24 @@ const Page = () => {
     { field: "Fee_Paid" },
     { field: "Action", cellRenderer: CustomButton },
   ]);
-
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <div>
       <AddStudent />
       <div>
         <h1 className="text-3xl font-bold ml-12">Students</h1>
-        <input
-          type="search"
-          name="searchStu"
-          id="srcStu"
-          className="border-black bg-purple-200 p-3 ml-12 mt-4 w-96 h-9 rounded-lg"
-        />
+        <div className="SearchButton my-2 ml-14 flex p-2 gap-2 shadow-sm mb-4 max-w-sm rounded-lg ">
+      <Search />
+      <input
+        type="search"
+        name="searchStu"
+        id="srcStu"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="outline-none w-full"
+        placeholder="Search..."
+      />
+    </div>
 
         {/* <Table className="ml-12 mt-4 w-[80%]">
           <TableCaption>List of Students</TableCaption>
@@ -93,6 +99,7 @@ const Page = () => {
           <AgGridReact
             rowData={rowData}
             columnDefs={colDefs}
+            quickFilterText={searchTerm}
             pagination={pagination}
             paginationPageSize={paginationPageSize}
             paginationPageSizeSelector={paginationPageSizeSelector}
