@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 
 const pagination = true;
 const paginationPageSize = 10;
-const paginationPageSizeSelector = [10, 20, 30, 40, 50];
+const paginationPageSizeSelector = [4, 8, 12, 16, 24];
 const Page = () => {
   const CustomButton = (props) => {
     return (
@@ -32,17 +32,38 @@ const Page = () => {
     {
       No: "1",
       Name: "Amir",
-      Contact: 64950,
-      Address: "Baghwanpora",
+      Contact: 84964651,
+      Address: "Maisuma",
+      Fee_Paid: false,
+    },
+    {
+      No: "2",
+      Name: "ishrat",
+      Contact: 5647891,
+      Address: "lal  bazar",
       Fee_Paid: true,
     },
     {
-      No: "Ford",
-      model: "F-Series",
-      price: 33850,
-      electric: false,
+      No: "3",
+      Name: "sabeena",
+      Contact: 45696461,
+      Address: "hyderpora",
+      Fee_Paid: false,
     },
-    { No: "Toyota", model: "Corolla", price: 29600, electric: false },
+    {
+      No: "4",
+      Name: "neimar",
+      Contact: 6991545521,
+      Address: "indranagar",
+      Fee_Paid: true,
+    },
+    {
+      No: "5",
+      Name: "Fozia",
+      Contact: 12365431232,
+      Address: "SanatNagar",
+      Fee_Paid: true,
+    },
   ]);
 
   const [colDefs, setColDefs] = useState([
@@ -60,17 +81,17 @@ const Page = () => {
       <div>
         <h1 className="text-3xl font-bold ml-12">Students</h1>
         <div className="SearchButton my-2 ml-14 flex p-2 gap-2 shadow-sm mb-4 max-w-sm rounded-lg ">
-      <Search />
-      <input
-        type="search"
-        name="searchStu"
-        id="srcStu"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="outline-none w-full"
-        placeholder="Search..."
-      />
-    </div>
+          <Search />
+          <input
+            type="search"
+            name="searchStu"
+            id="srcStu"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="outline-none w-full"
+            placeholder="Search..."
+          />
+        </div>
 
         {/* <Table className="ml-12 mt-4 w-[80%]">
           <TableCaption>List of Students</TableCaption>
