@@ -16,6 +16,18 @@ import {
 } from "@/components/ui/table";
 import { Search, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { toast } from "sonner";
 
 const pagination = true;
 const paginationPageSize = 10;
@@ -23,9 +35,29 @@ const paginationPageSizeSelector = [4, 8, 12, 16, 24];
 const Page = () => {
   const CustomButton = (props) => {
     return (
-      <Button className="bg-red-500 text-white">
-        <Trash />
-      </Button>
+      <AlertDialog>
+        <AlertDialogTrigger>
+          {" "}
+          <Button className="bg-red-500 text-white">
+            <Trash />
+          </Button>
+        </AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete your
+              record and remove your data from our servers.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={() => deleteRecord()}>
+              Continue
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     );
   };
   const [rowData, setRowData] = useState([
@@ -34,35 +66,35 @@ const Page = () => {
       Name: "Amir",
       Contact: 84964651,
       Address: "Maisuma",
-      Fee_Paid: false,
+      "Fee Paid": false,
     },
     {
       No: "2",
       Name: "ishrat",
       Contact: 5647891,
       Address: "lal  bazar",
-      Fee_Paid: true,
+      "Fee Paid": true,
     },
     {
       No: "3",
       Name: "sabeena",
       Contact: 45696461,
       Address: "hyderpora",
-      Fee_Paid: false,
+      "Fee Paid": false,
     },
     {
       No: "4",
       Name: "neimar",
       Contact: 6991545521,
       Address: "indranagar",
-      Fee_Paid: true,
+      "Fee Paid": true,
     },
     {
       No: "5",
       Name: "Fozia",
       Contact: 12365431232,
       Address: "SanatNagar",
-      Fee_Paid: true,
+      "Fee Paid": true,
     },
   ]);
 
@@ -71,10 +103,13 @@ const Page = () => {
     { field: "Name", filter: true },
     { field: "Contact" },
     { field: "Address" },
-    { field: "Fee_Paid" },
+    { field: "Fee Paid" },
     { field: "Action", cellRenderer: CustomButton },
   ]);
   const [searchTerm, setSearchTerm] = useState("");
+  const deleteRecord = () => {
+    toast("Record deleted succesfully ");
+  };
   return (
     <div>
       <AddStudent />
