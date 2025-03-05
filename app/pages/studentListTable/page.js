@@ -37,7 +37,6 @@ const Page = () => {
     return (
       <AlertDialog>
         <AlertDialogTrigger>
-          {" "}
           <Button className="bg-red-500 text-white">
             <Trash />
           </Button>
