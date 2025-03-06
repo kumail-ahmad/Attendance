@@ -14,7 +14,7 @@ const MonthSelection = () => {
   const today = new Date();
 
   const nextMonth = addMonths(new Date(), 0);
-  const [month, setMonth] = useState(nextMonths);
+  const [month, setMonth] = useState(nextMonth);
   return (
     <div>
       <Popover>
