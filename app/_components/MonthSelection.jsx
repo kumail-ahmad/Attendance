@@ -1,5 +1,5 @@
 "use client";
-import { useState, React } from "react";
+import React, { useState } from "react";
 import {
   Popover,
   PopoverContent,
@@ -9,8 +9,10 @@ import { Button } from "@/components/ui/button";
 import { CalendarDays } from "lucide-react";
 import { addMonths } from "date-fns";
 import moment from "moment";
+import { Calendar } from "@/components/ui/calendar";
 
-const MonthSelection = () => {
+const MonthSelection = ({selectedMonth}) => {
+  const [date, setDate] = useState(new Date());
   const today = new Date();
 
   const nextMonth = addMonths(new Date(), 0);
@@ -28,7 +30,18 @@ const MonthSelection = () => {
           </Button>
         </PopoverTrigger>
 
-        <PopoverContent>Place content for the popover here.</PopoverContent>
+        <PopoverContent>
+          <Calendar
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            onMonthChange={(value) => {
+              selectedMonth(value);
+              setMonth(value);
+            }}
+            className="rounded-md border"
+          />
+        </PopoverContent>
       </Popover>
     </div>
   );
