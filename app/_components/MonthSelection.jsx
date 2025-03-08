@@ -11,7 +11,7 @@ import { addMonths } from "date-fns";
 import moment from "moment";
 import { Calendar } from "@/components/ui/calendar";
 
-const MonthSelection = ({selectedMonth}) => {
+const MonthSelection = ({ selectedMonth }) => {
   const [date, setDate] = useState(new Date());
   const today = new Date();
 
@@ -20,7 +20,7 @@ const MonthSelection = ({selectedMonth}) => {
   return (
     <div>
       <Popover>
-        <PopoverTrigger>
+        <PopoverTrigger asChild>
           <Button
             variant="outline"
             className="flex gap-2 items-center text-slate-500"
@@ -33,10 +33,8 @@ const MonthSelection = ({selectedMonth}) => {
         <PopoverContent>
           <Calendar
             mode="single"
-            selected={date}
-            onSelect={setDate}
             onMonthChange={(value) => {
-              selectedMonth(value);
+                MonthSelection(value);
               setMonth(value);
             }}
             className="rounded-md border"
