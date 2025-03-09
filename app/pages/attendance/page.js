@@ -1,17 +1,22 @@
+"use client"
 import MonthSelection from "@/app/_components/MonthSelection";
 import { Button } from "@/components/ui/button";
-import React from "react";
+import React, { useState } from "react";
 
 const Attendance = () => {
+  const [selectedMonth, setSelectedMonth] = useState();
+  const onSearchHandler = () => {
+    console.log(selectedMonth);
+  };
   return (
     <div className="p-10">
       <h2 className="text-2xl font-bold"> Attendance </h2>
 
       {/* Search Option */}
-      <div className="flex gap-3 mt-5 items-center">
+      <div className="flex gap-3 mt-5 items-center p-3 rounded-lg shadow-lg">
         <label>Select Month:</label>
-        <MonthSelection />
-        <Button>Search</Button>
+        <MonthSelection selectedMonth={ (value)=>setSelectedMonth} />
+        <Button onClick={() => onSearchHandler()}>Search</Button>
       </div>
     </div>
   );

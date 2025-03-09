@@ -12,7 +12,7 @@ import moment from "moment";
 import { Calendar } from "@/components/ui/calendar";
 
 const MonthSelection = ({ selectedMonth }) => {
-  const [date, setDate] = useState(new Date());
+//   const [date, setDate] = useState(new Date());
   const today = new Date();
 
   const nextMonth = addMonths(new Date(), 0);
@@ -34,7 +34,7 @@ const MonthSelection = ({ selectedMonth }) => {
           <Calendar
             mode="single"
             onMonthChange={(value) => {
-                MonthSelection(value);
+                // MonthSelection(value);
               setMonth(value);
             }}
             className="rounded-md border"
