@@ -12,11 +12,14 @@ import moment from "moment";
 import { Calendar } from "@/components/ui/calendar";
 
 const MonthSelection = ({ selectedMonth }) => {
-//   const [date, setDate] = useState(new Date());
-  const today = new Date();
+  const [month, setMonth] = useState(addMonths(new Date(), 0));
 
-  const nextMonth = addMonths(new Date(), 0);
-  const [month, setMonth] = useState(nextMonth);
+  const handleMonthChange = (value) => {
+    if (!value || moment(value).isSame(month, "month")) return; // Prevent unnecessary updates
+    setMonth(value);
+    selectedMonth(value);
+  };
+
   return (
     <div>
       <Popover>
@@ -33,10 +36,8 @@ const MonthSelection = ({ selectedMonth }) => {
         <PopoverContent>
           <Calendar
             mode="single"
-            onMonthChange={(value) => {
-                // MonthSelection(value);
-              setMonth(value);
-            }}
+            selected={month}
+            onMonthChange={handleMonthChange}
             className="rounded-md border"
           />
         </PopoverContent>
