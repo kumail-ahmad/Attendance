@@ -15,7 +15,7 @@ const MonthSelection = ({ selectedMonth }) => {
   const [month, setMonth] = useState(addMonths(new Date(), 0));
 
   const handleMonthChange = (value) => {
-    if (!value || moment(value).isSame(month, "month")) return; // Prevent unnecessary updates
+    if (!value || moment(value).isSame(month, "month")) return; //    Prevent unnecessary updates
     setMonth(value);
     selectedMonth(value);
   };
