@@ -5,15 +5,7 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 import AddStudent from "../AddStudent/page";
 import { List } from "@/app/utilities/List";
 import { useState } from "react";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+
 import { Search, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -112,7 +104,7 @@ const Page = () => {
   return (
     <div>
       <AddStudent />
-      <div>
+      <div className="ml-0">
         <h1 className="text-3xl font-bold ml-12">Students</h1>
         <div className="SearchButton my-2 ml-14 flex p-2 gap-2 shadow-sm mb-4 max-w-sm rounded-lg ">
           <Search />
@@ -127,30 +119,8 @@ const Page = () => {
           />
         </div>
 
-        {/* <Table className="ml-12 mt-4 w-[80%]">
-          <TableCaption>List of Students</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[150px]">ID</TableHead>
-              <TableHead className="w-[250px]">Name</TableHead>
-              <TableHead className="w-[250px]">Grade</TableHead>
-              <TableHead className="text-right w-[60px]">Contact</TableHead>
-              <TableHead className="text-right w-[150px]">Action</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {List.map((item) => (
-              <TableRow key={item.id}>
-                <TableCell>{item.id}</TableCell>
-                <TableCell className="font-medium">{item.Name}</TableCell>
-                <TableCell>awal</TableCell>
-                <TableCell className="text-right">{item.Contact}</TableCell>
-                <TableCell className="text-right">{item.Action}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table> */}
-        <div className="ml-20 mt-9" style={{ height: 300, width: 1200 }}>
+        <div className=" mt-9 " style={{ height: 300, width: 1200 }}>
+        <div className="h-[400px] w-full max-w-[100vw] mx-12">
           <AgGridReact
             rowData={rowData}
             columnDefs={colDefs}
@@ -160,6 +130,7 @@ const Page = () => {
             paginationPageSizeSelector={paginationPageSizeSelector}
           />
         </div>
+      </div>
       </div>
     </div>
   );
