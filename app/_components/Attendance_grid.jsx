@@ -56,7 +56,7 @@ const Attendance_grid = ({ attendanceList, selectedMonth }) => {
   
   return (
     <div>
-      {/*     student grid     */}
+      {/* student grid */}
       <div className="mt-6" style={{ height: 500 }}>
         <AgGridReact rowData={rowData} columnDefs={colDefs} />
       </div>

@@ -24,7 +24,7 @@ const Attendance = () => {
 
       <Attendance_grid
         // attendanceList={attendanceList}
-        selectedMonth={selectedMonth}
+        selectedMonth={selectedMonth} //passed the value to attendance_grid component
       />
     </div>
   );
