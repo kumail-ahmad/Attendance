@@ -15,7 +15,7 @@ const Attendance = () => {
     <div className="p-10">
       <h2 className="text-2xl font-bold"> Attendance </h2>
 
-      {/* Month Option */}
+      {/* Month Option for user to select*/}
       <div className="flex gap-3 mt-5 items-center p-3 rounded-lg shadow-lg">
         <label>Select Month:</label>
         <MonthSelection selectedMonth={setSelectedMonth} />
