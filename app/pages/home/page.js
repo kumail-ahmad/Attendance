@@ -4,17 +4,48 @@ import { useTheme } from "next-themes";
 import { DashItems } from "../../utilities/dash";
 import React, { useEffect, useState } from "react";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const Dashboard = () => {
   // const { setTheme } = useTheme();
   // useEffect(() => {
   //   setTheme("system");
   // }, []);
+  const data = [
+    {
+      name: "Page A",
+      uv: 4000,
+      pv: 2400,
+    },
+    {
+      name: "Page B",
+      uv: 3000,
+      pv: 1398,
+    },
+    {
+      name: "Page C",
+      uv: 2000,
+      pv: 9800,
+    },
+    {
+      name: "Page D",
+      uv: 2780,
+      pv: 3908,
+    },
+  ];
 
   const { user } = useKindeBrowserClient();
   return (
     <div>
-      <div>
+      <div className="">
         <div className="flex justify-end p-4 rounded-full">
           <Image
             src={user?.picture ? user.picture : "/user.svg"}
@@ -47,6 +78,17 @@ const Dashboard = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="bar mt-12 ">
+          <BarChart width={730} height={250} data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="pv" fill="#8884d8" />
+            <Bar dataKey="uv" fill="#82ca9d" />
+          </BarChart>
         </div>
       </div>
     </div>
