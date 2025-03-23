@@ -64,7 +64,7 @@ const Dashboard = () => {
               <h1>{user?.given_name}</h1>
 
               <div className="ml-5 flex flex-col">
-                <div className="text-lg font-semibold">{item.title}</div>
+                <div className="text-lg font-semibold ">{item.title}</div>
                 <div className="text-lg">{item.percentage}%</div>
               </div>
             </div>
