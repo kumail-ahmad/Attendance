@@ -52,7 +52,7 @@ const Dashboard = () => {
           {DashItems.map((item) => (
             <div
               key={item.id}
-              className="flex items-center bg-blue-200 p-4 w-[250px] h-[100px] rounded-lg shadow-md"
+              className="flex   items-center bg-blue-200 p-4 w-[250px] h-[100px] rounded-lg shadow-md"
             >
               <Image
                 src={item.image}
