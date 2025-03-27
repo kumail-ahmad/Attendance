@@ -38,6 +38,7 @@ const Dashboard = () => {
     <div>
       <div className="">
         <div className="flex justify-end  p-4 rounded-full">
+          <h1 className="font-bold mt-2 mr-4">{user?.given_name}</h1>
           <Image
             src={user?.picture ? user.picture : "/user.svg"}
             width={35}
@@ -61,7 +62,6 @@ const Dashboard = () => {
                 height={28}
                 className=""
               />
-              <h1>{user?.given_name}</h1>
 
               <div className="ml-5 flex  flex-col">
                 <div className="text-lg font-semibold ">{item.title}</div>
