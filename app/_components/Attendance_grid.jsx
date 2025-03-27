@@ -42,7 +42,7 @@ const Attendance_grid = ({ attendanceList, selectedMonth }) => {
   const numberOfDays = daysInMonth(year, month);
   const daysArray = Array.from({ length: numberOfDays }, (_, i) => i + 1);
 
-  console.log("Days Array:", daysArray);
+  // console.log("Days Array:", daysArray);
 
   const getUniqueRecord = () => {
     return [...new Map(rowData.map((item) => [item.No, item])).values()];
