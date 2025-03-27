@@ -37,7 +37,7 @@ const Dashboard = () => {
   return (
     <div>
       <div className="">
-        <div className="flex justify-end p-4 rounded-full">
+        <div className="flex justify-end  p-4 rounded-full">
           <Image
             src={user?.picture ? user.picture : "/user.svg"}
             width={35}
