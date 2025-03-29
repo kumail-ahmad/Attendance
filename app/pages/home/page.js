@@ -16,10 +16,7 @@ import {
 } from "recharts";
 
 const Dashboard = () => {
-  // const { setTheme } = useTheme();
-  // useEffect(() => {
-  //   setTheme("system");
-  // }, []);
+ 
   const data = [
     {
       name: "Boys",
