@@ -47,7 +47,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="imageofmobile hidden md:block  mt-20 ml-2">
           <Image
             alt="no image"
             width={482}
