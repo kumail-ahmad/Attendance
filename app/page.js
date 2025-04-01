@@ -18,7 +18,7 @@ export default function Home() {
         <div className="text&all mx-3 md:mx-16">
           <div className="flex justify-center mt-36 md:mt-40 flex-col ml-[5vw] gap-3 font-poppins">
             <p className="text-[#def056] font-bold text-4xl md:text-6xl">
-            PresenSee
+              PresenSee
             </p>
             <p className="text-[#def056] font-bold text-3xl md:text-5xl">
               Best Monitoring app
@@ -27,7 +27,9 @@ export default function Home() {
             <p className="text-[#def056] md:text-lg mt-4 ">
               Join millions of users already using this amazing
             </p>
-            <p className="text-[#def056] md:text-xl  ">Join to get an amazing </p>
+            <p className="text-[#def056] md:text-xl  ">
+              Join to get an amazing{" "}
+            </p>
 
             <div className="Input&Button   ">
               <input
@@ -38,7 +40,7 @@ export default function Home() {
                 placeholder="Are you Ready "
               />
               <button
-                className="bg-[#7AA095] hover:bg-[#D7F9F1] text-black font-bold py-4 px-3 w-32 rounded-full mt-3"
+                className="  bg-[#7AA095] hover:bg-[#D7F9F1] text-black font-bold py-4 px-3 w-32 rounded-full mt-3"
                 disabled=""
                 onClick={() => handleClick()}
               >
