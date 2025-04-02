@@ -20,11 +20,11 @@ export default function Home() {
             <p className="text-[#def056] font-bold text-4xl md:text-6xl">
               PresenSee
             </p>
-            <p className="text-[#def056] font-bold text-3xl md:text-5xl">
+            <p className="  text-[#def056] font-bold text-3xl md:text-5xl">
               Best Monitoring app
             </p>
-            <p className="text-[#def056] font-bold text-4xl md:text-5xl"> </p>
-            <p className="text-[#def056] md:text-lg mt-4 ">
+            <p className=" text-[#def056] font-bold text-4xl md:text-5xl"> </p>
+            <p className=" text-[#def056] md:text-lg mt-4 ">
               Join millions of users already using this amazing
             </p>
             <p className="text-[#def056] md:text-xl  ">
