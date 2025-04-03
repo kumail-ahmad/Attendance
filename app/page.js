@@ -37,7 +37,7 @@ export default function Home() {
                 type="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                placeholder="Are you Ready "
+                placeholder=" Are you Ready "
               />
               <button
                 className="  bg-[#7AA095] hover:bg-[#D7F9F1] text-black font-bold py-4 px-3 w-32 rounded-full mt-3"
